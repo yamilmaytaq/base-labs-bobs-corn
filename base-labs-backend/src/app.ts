@@ -1,28 +1,26 @@
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
-import { PrismaClient } from "@prisma/client";
 import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
+import purchaseRoutes from "./routes/purchase-routes.js";
+import { apiResponseMiddleware } from "./middlewares/api-response-middleware.js";
+import { appConfig } from "./config/configuration.js";
 
-dotenv.config(); // Cargar variables de entorno
+dotenv.config();
 
 const app = express();
-const prisma = new PrismaClient();
 
 app.use(cors());
 app.use(helmet());
 app.use(express.json());
+app.use(cookieParser());
 
-app.get("/users", async (req, res) => {
-  try {
-    const users = await prisma.user.findMany();
-    res.json(users);
-  } catch (error) {
-    res.status(500).json({ error: "Error al conectar con la base de datos" });
-  }
-});
+app.use(apiResponseMiddleware);
 
-const PORT = process.env.PORT || 3000;
+app.use("/api/purchase", purchaseRoutes);
+
+const PORT = appConfig.port;
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
