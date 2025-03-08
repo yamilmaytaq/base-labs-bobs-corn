@@ -3,9 +3,9 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export const PurchaseRepository = {
-  async createPurchase(userId: string, quantity: number) {
+  async createPurchase(userId: string, quantity: number, state: boolean) {
     return await prisma.purchase.create({
-      data: { userId, quantity },
+      data: { userId, quantity, state },
     });
   },
 
@@ -17,4 +17,20 @@ export const PurchaseRepository = {
       },
     });
   },
+
+  async getFailedAttempts(userId: string, startTime: Date) {
+    return await prisma.purchase.count({
+      where: {
+        userId,
+        createdAt: { gte: startTime },
+        state: false,
+      },
+    });
+  },
+
+  async getAllPurchases() {
+    return await prisma.purchase.findMany({
+      orderBy: { createdAt: "desc" },
+    });
+  }
 };

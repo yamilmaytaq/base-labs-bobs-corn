@@ -18,6 +18,8 @@ model Purchase {
   id         String   @id @default(uuid())
   userId     String
   quantity   Int
+  state      Boolean  @default(true)
   createdAt  DateTime @default(now())
+
   @@unique([userId, createdAt])
 }

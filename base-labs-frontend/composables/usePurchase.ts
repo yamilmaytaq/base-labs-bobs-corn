@@ -1,6 +1,6 @@
 import { useToast } from "vue-toastification";
 import { useUserId } from "./useUserId";
-import type { PurchaseRequest } from "@/models/purchase.model";
+import type { PurchaseHistoryResponse, PurchaseRequest } from "@/models/purchase.model";
 
 export const usePurchase = () => {
   const toast = useToast();
@@ -8,7 +8,7 @@ export const usePurchase = () => {
   const apiBase = config.public.apiBase;
   const { getUserId } = useUserId();
 
-  const purchaseCorn = async () => {
+  const postPurchaseCorn = async () => {
     try {
       const userId: string = getUserId();
       const requestData: PurchaseRequest = { userId };
@@ -18,13 +18,26 @@ export const usePurchase = () => {
         body: requestData,
       });
 
-      toast.success("🌽 Compra realizada con éxito!");
+      toast.success("Compra realizada con exito!");
       return response;
     } catch (error: any) {
-      toast.error(error?.data?.message || "❌ Error al procesar la compra");
+      toast.error(error?.data?.message || "Error al procesar la compra");
       throw error;
     }
   };
 
-  return { purchaseCorn };
+  const getPurchaseHistory = async () => {
+    try {
+      const response = await $fetch<PurchaseHistoryResponse[]>(`${apiBase}/purchase/history`, {
+        method: "GET",
+      });
+
+      return response;
+    } catch (error: any) {
+      toast.error("Error al obtener el historial de compras");
+      throw error;
+    }
+  };
+
+  return { postPurchaseCorn, getPurchaseHistory };
 };

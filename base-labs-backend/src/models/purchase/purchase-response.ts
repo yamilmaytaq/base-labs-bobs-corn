@@ -1,5 +1,5 @@
 export interface PurchaseResponse {
-    userId: string;
-    quantity: number;
-  }
-  
+  userId: string;
+  quantity: number;
+  state: boolean;
+}
