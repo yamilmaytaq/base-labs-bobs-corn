@@ -17,7 +17,7 @@ Antes de comenzar, asegúrate de tener instalado en tu sistema:
 ### 1️⃣ Clonar el Repositorio
 ```sh
 # Clonar el repositorio
-git clone https://github.com/usuario/base-labs.git
+git clone https://github.com/yamilmaytaq/base-labs-bobs-corn.git
 
 # Ingresar al directorio del repositorio
 cd base-labs
