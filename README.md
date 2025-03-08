@@ -20,7 +20,7 @@ Antes de comenzar, asegúrate de tener instalado en tu sistema:
 git clone https://github.com/yamilmaytaq/base-labs-bobs-corn.git
 
 # Ingresar al directorio del repositorio
-cd base-labs
+cd base-labs-bobs-corn
 ```
 
 ---
@@ -29,7 +29,7 @@ cd base-labs
 
 ### 2️⃣ Instalar dependencias del Backend
 ```sh
-cd backend
+cd base-labs-backend
 npm install
 ```
 
@@ -54,7 +54,7 @@ MAX_ATTEMPTS=3
 
 ### 4️⃣ Iniciar la Base de Datos con Docker
 ```sh
-cd backend
+cd base-labs-backend
 docker-compose up -d
 ```
 Esto levantará **PostgreSQL** y **pgAdmin** en contenedores Docker.
@@ -71,7 +71,7 @@ El servidor estará disponible en: **[http://localhost:4000](http://localhost:40
 
 ### 6️⃣ Instalar dependencias del Frontend
 ```sh
-cd ../frontend
+cd ../base-labs-frontend
 npm install
 ```
 
@@ -98,7 +98,7 @@ El frontend estará disponible en: **[http://localhost:3000](http://localhost:30
 ## 📌 Notas Adicionales
 - **Para detener los contenedores Docker:**
   ```sh
-  cd backend
+  cd base-labs-backend
   docker-compose down
   ```
 - **Para reconstruir el backend:**
@@ -117,7 +117,5 @@ El frontend estará disponible en: **[http://localhost:3000](http://localhost:30
 ---
 
 ## 🎯 Contacto y Soporte
-Si tienes algún problema con la instalación o ejecución, por favor crea un **issue** en este repositorio o contacta al equipo de desarrollo.
-
-¡Gracias por contribuir a Base Labs! 🚀
+Si tienes algún problema con la instalación o ejecución, por favor contacta al usuario que subio el repositorio.
 
