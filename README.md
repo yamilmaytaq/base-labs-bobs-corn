@@ -110,13 +110,9 @@ El frontend estará disponible en: **[http://localhost:3000](http://localhost:30
   ```sh
   docker-compose up --build -d
   ```
-- **Para ver los logs del backend:**
+- **Para ver los logs del backend (postgres, pgAdmin):**
   ```sh
-  docker logs -f backend
-  ```
-- **Para ver los logs del frontend:**
-  ```sh
-  docker logs -f nuxt_frontend
+  docker logs -f base-labs-backend
   ```
 
 ---
