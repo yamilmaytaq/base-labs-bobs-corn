@@ -1,4 +1,4 @@
-# 📌 Base Labs - Configuración del Proyecto
+# 📌 Bob´s Corn - Configuracion del Proyecto
 
 Este repositorio contiene los proyectos **Frontend** y **Backend** de Base Labs - Bob´s Corn. A continuación, se detallan los pasos para clonar, instalar dependencias y ejecutar ambos proyectos correctamente en un entorno local.
 
@@ -47,10 +47,10 @@ MAX_ATTEMPTS=3
 ```
 
 📌 **Explicación de variables:**
-- `PURCHASE_QUANTITY`: Cantidad máxima de compras permitidas antes de activar el cooldown.
+- `PURCHASE_QUANTITY`: Cantidad maxima de compras permitidas antes de activar el cooldown.
 - `PURCHASE_COOLDOWN_MINUTES`: Minutos de espera desde la última compra exitosa.
 - `PURCHASE_COOLDOWN_SECONDS`: Segundos adicionales de espera.
-- `MAX_ATTEMPTS`: Número máximo de intentos fallidos antes de bloquear temporalmente nuevas compras.
+- `MAX_ATTEMPTS`: Numero maximo de intentos fallidos antes de bloquear temporalmente nuevas compras.
 
 ### 4️⃣ Iniciar la Base de Datos con Docker
 ```sh
