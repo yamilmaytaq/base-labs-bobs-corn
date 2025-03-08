@@ -31,10 +31,12 @@ export const PurchaseController = {
         code: 200,
       });
     } catch (error: any) {
-      res.status(error.message === `Error: ${error}.` ? 429 : 500).json(<ApiResponse<null>>{
+      const isTooManyRequests = error.message.includes("Has alcanzado el limite");
+
+      res.status(isTooManyRequests ? 429 : 500).json(<ApiResponse<null>>{
         status: false,
         message: error.message || "Error interno del servidor",
-        code: 500,
+        code: isTooManyRequests ? 429 : 500,
       });
     }
   },

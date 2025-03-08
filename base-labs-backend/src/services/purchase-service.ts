@@ -13,7 +13,7 @@ export const PurchaseService = {
 
     if (purchaseCount >= purchaseConfig.quantity) {
       throw new Error(
-        `Has alcanzado el límite de ${purchaseConfig.quantity} compras. Espera ${purchaseConfig.cooldownMinutes} minuto(s) y ${purchaseConfig.cooldownSeconds} segundo(s) antes de volver a comprar.`
+        `Has alcanzado el limite de ${purchaseConfig.quantity} compras. Espera ${purchaseConfig.cooldownMinutes} minuto(s) y ${purchaseConfig.cooldownSeconds} segundo(s) antes de volver a comprar.`
       );
     }
 
