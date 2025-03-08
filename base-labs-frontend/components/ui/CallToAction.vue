@@ -3,39 +3,38 @@
     <div
       class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between"
     >
-      <!-- Sección del Desarrollador -->
       <div class="flex items-center gap-4 text-left">
         <img
-          src="/assets/images/svg/figure-corn.svg"
+          src="/assets/images/jpg/devPhoto.jpg"
           alt="Foto del Desarrollador"
-          class="w-20 h-20 rounded-full border-2 border-white shadow-lg"
+          class="w-20 h-20 rounded-full border-2 border-white shadow-lg object-cover object-top"
         />
+
         <div>
           <h3 class="text-lg font-bold">Desarrollado por</h3>
           <p class="text-gray-200">Yamil Mayta</p>
           <div class="flex gap-3 mt-2">
             <a
-              href="https://linkedin.com/in/tuperfil"
+              href="https://www.linkedin.com/in/yamilmaytaq"
               target="_blank"
               class="hover:text-yellow-300 transition"
             >
               <Icon icon="mdi:linkedin" class="text-2xl" />
             </a>
             <a
-              href="https://github.com/tuusuario"
+              href="https://github.com/yamilmaytaq"
               target="_blank"
               class="hover:text-yellow-300 transition"
             >
               <Icon icon="mdi:github" class="text-2xl" />
             </a>
-            <a href="tel:+1234567890" class="hover:text-yellow-300 transition">
+            <a href="(+591)69828236" class="hover:text-yellow-300 transition">
               <Icon icon="mdi:phone" class="text-2xl" />
             </a>
           </div>
         </div>
       </div>
 
-      <!-- Sección de Call To Action -->
       <div
         class="flex flex-col items-center text-center md:items-end md:text-right"
       >
@@ -43,8 +42,7 @@
           🌽 ¡No te quedes sin tu maíz!
         </h3>
         <p class="mt-3 text-gray-200">
-          ¡Compra ahora y
-          disfruta del mejor maíz fresco!
+          ¡Compra ahora y disfruta del mejor maíz fresco!
         </p>
         <NuxtLink
           to="/purchase"

@@ -14,21 +14,6 @@ services:
     volumes:
       - pg_data:/var/lib/postgresql/data
 
-  app:
-    build: .
-    container_name: node_app
-    restart: always
-    depends_on:
-      - postgres
-    ports:
-      - "3000:3000"
-    env_file:
-      - .env
-    volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
-    command: npm run dev
-
   pgadmin:
     image: dpage/pgadmin4
     container_name: pgadmin

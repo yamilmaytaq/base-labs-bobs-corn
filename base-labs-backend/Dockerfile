@@ -1,4 +1,3 @@
-# Usa una versión estable de Node.js
 FROM node:22
 
 WORKDIR /usr/src/app
@@ -9,6 +8,6 @@ RUN npm install --legacy-peer-deps && npm cache clean --force
 
 COPY . .
 
-EXPOSE 3000
+EXPOSE 4000
 
 CMD ["npm", "run", "dev"]
