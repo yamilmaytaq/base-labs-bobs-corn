@@ -59,6 +59,11 @@ docker-compose up -d
 ```
 Esto levantará **PostgreSQL** y **pgAdmin** en contenedores Docker.
 
+Ejecutar las migraciones de prisma con el siguiente comando.
+```sh
+npx prisma migrate dev --name purchase-init
+```
+
 ### 5️⃣ Ejecutar el Servidor Backend
 ```sh
 npm run dev
